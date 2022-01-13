@@ -1,3 +1,4 @@
+import os
 import day1
 import numpy as np
 
@@ -14,6 +15,7 @@ def test_getLargerTrio_Part2():
     assert trio_larger == TEST__RESULT2
     
 def test_read_input():
+    os.chdir(".\day1")
     new_array = day1.read_input('test1.txt')
     np.testing.assert_array_equal(new_array, TEST_ARRAY)
 
