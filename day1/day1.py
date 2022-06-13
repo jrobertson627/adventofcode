@@ -46,6 +46,7 @@ def describeDay1_Part2():
 
 def runDay():
     os.chdir(".\day1")
+    print("Day 1: ")
     descrip1 = describeDay1_Part1()
     descrip2 = describeDay1_Part2()
     src_array = read_input("input1.txt")
@@ -55,4 +56,5 @@ def runDay():
     print('There are %s measurements that are larger than the previous' % count1)
     print(descrip2)
     print('There are %s measurement trios that are larger than the previous' % count2)
+    os.chdir("..")
     return 0

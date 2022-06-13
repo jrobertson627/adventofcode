@@ -3,9 +3,9 @@ import day2
 import numpy as np
 import os
 
-TEST_ARRAY = np.array([("forward", 5), ("down", 5), ("forward", 8), ("up", 3), ("down", 8), ("forward", 2)])
+TEST_ARRAY = np.array([("forward", '5'), ("down", '5'), ("forward", '8'), ("up", '3'), ("down", '8'), ("forward", '2')])
 TEST_BREAK_STRING = "forward 5"
-TEST_BREAK_STRING_RESULT = [("forward", 5)]
+TEST_BREAK_STRING_RESULT = [("forward", '5')]
 TEST_RESULT_HORIZ_POS = 15
 TEST_RESULT_SIMPLE_DEPTH = 10
 TEST_RESULT_SIMPLE_FINAL_POS = 150

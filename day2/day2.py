@@ -9,7 +9,6 @@ def changePos(oldpos, change):
     return newpos
 
 def take_input(filename):
-    os.chdir(".\day1")
     with open(filename) as f:
         directions = f.read().splitlines()
         f.close()
@@ -22,7 +21,8 @@ def text_num_split(piece):
             return [piece[:index], piece[index:]]
             
 def runDay():
-    os.chdir(".\day2")
+    if os.getcwd() != "day2":
+        os.chdir("day2")
     directions = take_input("test2.txt")
     for x in directions:
         print(directions)
