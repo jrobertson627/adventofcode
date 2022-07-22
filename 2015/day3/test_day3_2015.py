@@ -13,7 +13,7 @@ TEST_RESULT_3 = 2
 
 def test_movement():
     
-    pass
+    assert False
 
 def test_calc_unique_houses():
-    pass
+    assert False
