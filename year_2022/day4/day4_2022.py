@@ -25,7 +25,7 @@ def read_input(filename):
         csv_reader = csv.reader(csv_file, delimiter=" ")
         for row in csv_reader:
             cleaning_sections.extend(row)
-            
+
     cleaning_ints = prepare_data(cleaning_sections)
     return cleaning_ints
 
@@ -40,14 +40,13 @@ def prepare_data(cleaning_sections):
     '''
     new_cleaner = []
     for row in cleaning_sections:
-        if len(row) == 4:
-            new_row = []
-            first_pair, second_pair = [list(map(int, pair.split('-'))) for pair in row.split(",")]
-            new_row.extend(first_pair)
-            new_row.extend(second_pair)
-            new_cleaner.append(new_row)
-    return new_cleaner        
-    
+        new_row = []
+        first_pair, second_pair = [list(map(int, pair.split('-'))) for pair in row.split(",")]
+        new_row.extend(first_pair)
+        new_row.extend(second_pair)
+        new_cleaner.append(new_row)
+    return new_cleaner
+
 def determine_full_overlap(cleaning_sections):
     '''
     Determine which pairs fully overlap
@@ -58,12 +57,12 @@ def determine_full_overlap(cleaning_sections):
         num_full_overlap(int): How many partners fully overlap
     '''
     num_full_overlap = 0
-    
+
     for row in cleaning_sections:
         one_cleaner = [row[0], row[1]]
         two_cleaner = [row[2], row[3]]
     # determine if one range if completely in the other
-        
+
     # do the two elves start at the same spot
         if one_cleaner[0] != two_cleaner[0]:
             if one_cleaner[0] > two_cleaner[0]:
@@ -100,7 +99,7 @@ def determine_any_overlap(cleaning_sections):
     for row in cleaning_sections:
         one_cleaner = [row[0], row[1]]
         two_cleaner = [row[2], row[3]]
-        
+
         if one_cleaner[0] != two_cleaner[0]:
             # they don't start at the same spot
             if one_cleaner[1] < two_cleaner[0]:
